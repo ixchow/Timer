@@ -69,15 +69,15 @@ public class Timer : MonoBehaviour {
 		}
 	}
 
-	public void GetDigits(out char minutesTens, out char minutesOnes, out char secondsTens, out char secondsOnes) {
+	public int GetSecondsLeft() {
 		if (TimeLeft < 0) {
-			minutesTens = '0';
-			minutesOnes = '0';
-			secondsTens = '0';
-			secondsOnes = '0';
-			return;
+			return 0;
 		}
-		int secondsLeft = Mathf.FloorToInt(TimeLeft);
+		return Mathf.FloorToInt(TimeLeft);
+	}
+
+	public void GetDigits(out char minutesTens, out char minutesOnes, out char secondsTens, out char secondsOnes) {
+		int secondsLeft = GetSecondsLeft();
 		string minutes = string.Format("{0:D2}", secondsLeft / 60);
 		string seconds = string.Format("{0:D2}", secondsLeft % 60);
 		minutesTens = minutes[minutes.Length-2];

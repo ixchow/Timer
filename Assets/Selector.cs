@@ -8,7 +8,7 @@ public class Selector : MonoBehaviour {
 	public Timer current = null;
 
 	void Start () {
-		Timers = FindObjectsOfType< Timer >();
+		/*Timers = FindObjectsOfType< Timer >();*/
 		foreach (var t in Timers) {
 			t.gameObject.SetActive(false);
 		}
@@ -16,10 +16,12 @@ public class Selector : MonoBehaviour {
 
 	void Update() {
 		if (current == null) {
-			if (Input.GetKeyDown(KeyCode.K) || Input.GetKeyDown(KeyCode.Space)) {
-				current = Timers[Random.Range(0, Timers.Length-1)];
+			if (Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.K) || Input.GetKeyDown(KeyCode.Space)) {
+				current = Timers[Random.Range(0, Timers.Length)];
 				if (Input.GetKeyDown(KeyCode.K)) {
 					current.TalkSeconds = 10 * 60;
+				} else if (Input.GetKeyDown(KeyCode.S)) {
+					current.TalkSeconds = 1 * 60 + 5;
 				} else {
 					current.TalkSeconds = 5 * 60;
 				}
