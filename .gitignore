@@ -1,0 +1,14 @@
+*.swp
+*.blend[0-9]
+*.blend[0-9].meta
+Library
+Temp
+Timer.sln
+Timer.userprefs
+Assembly-CSharp.csproj
+Assembly-CSharp-Editor-firstpass.csproj
+Assembly-CSharp-firstpass.csproj
+obj
+map
+Timer-v[0-9]
+Timer-v[0-9].zip
