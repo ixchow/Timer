@@ -5,7 +5,7 @@ using UnityEngine;
 public class FireTimer : MonoBehaviour {
 
 	public Mesh[] DigitMeshes;
-	public ParticleSystem MinutesHigh, MinutesLow, Colon, SecondsHigh, SecondsLow;
+	public ParticleSystem MinutesHigh, MinutesLow, Colon, SecondsHigh, SecondsLow, Skull;
 
 	Timer timer;
 
@@ -58,7 +58,14 @@ public class FireTimer : MonoBehaviour {
 			var shm = SecondsHigh.main; shm.startColor = c;
 			var slm = SecondsLow.main; slm.startColor = c;
 			var cm = Colon.main; cm.startColor = c;
+			var sm = Skull.main; sm.startColor = c;
 		};
+
+		if (timer.CurrentMode != Timer.Mode.Finished) {
+			if (Skull.isPlaying) Skull.Stop();
+		} else {
+			if (!Skull.isPlaying) Skull.Play();
+		}
 
 		if (timer.CurrentMode == Timer.Mode.Talk) {
 			var mhm = MinutesHigh.main;
@@ -73,6 +80,7 @@ public class FireTimer : MonoBehaviour {
 			Colon.Stop();
 			SecondsHigh.Stop();
 			SecondsLow.Stop();
+			SetColor(new Color(1.0f, 1.0f, 1.0f, 1.0f));
 		}
 	}
 

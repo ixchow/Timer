@@ -17,6 +17,7 @@ ModelImporter:
     100018: Fire8
     100020: Fire9
     100022: FireColon
+    100024: FireSkull
     400000: //RootNode
     400002: Fire0
     400004: Fire1
@@ -29,6 +30,7 @@ ModelImporter:
     400018: Fire8
     400020: Fire9
     400022: FireColon
+    400024: FireSkull
     2300000: Fire0
     2300002: Fire1
     2300004: Fire2
@@ -40,6 +42,7 @@ ModelImporter:
     2300016: Fire8
     2300018: Fire9
     2300020: FireColon
+    2300022: FireSkull
     3300000: Fire0
     3300002: Fire1
     3300004: Fire2
@@ -51,6 +54,7 @@ ModelImporter:
     3300016: Fire8
     3300018: Fire9
     3300020: FireColon
+    3300022: FireSkull
     4300000: Fire0
     4300002: Fire9
     4300004: Fire8
@@ -62,6 +66,7 @@ ModelImporter:
     4300016: Fire2
     4300018: Fire1
     4300020: FireColon
+    4300022: FireSkull
     7400000: Default Take
     9500000: //RootNode
   materials:
