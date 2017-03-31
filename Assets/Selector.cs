@@ -47,7 +47,7 @@ public class Selector : MonoBehaviour {
 				if (Input.GetKeyDown(KeyCode.K)) {
 					StartKeynote();
 				} else if (Input.GetKeyDown(KeyCode.S)) {
-					PickCurrent();
+					PickCurrent(0);
 					current.TalkSeconds = 10;
 					current.BonusSeconds = 10;
 					current.QuestionSeconds = 10;
@@ -83,16 +83,17 @@ public class Selector : MonoBehaviour {
 		}
 	}
 
-	void PickCurrent() {
+	void PickCurrent(int option = -1) {
 		if (current != null) {
 			current.gameObject.SetActive(false);
 		}
-		current = Timers[Random.Range(0, Timers.Length)];
+		if (option == -1) option = Random.Range(0, Timers.Length);
+		current = Timers[option];
 		current.gameObject.SetActive(true);
 	}
 
 	public void StartTalk() {
-		PickCurrent();
+		PickCurrent(0);
 		current.TalkSeconds = 5 * 60;
 		current.BonusSeconds = 1 * 60;
 		current.QuestionSeconds = 1 * 60;
@@ -101,7 +102,7 @@ public class Selector : MonoBehaviour {
 	}
 
 	public void StartKeynote() {
-		PickCurrent();
+		PickCurrent(1);
 		current.TalkSeconds = 10 * 60;
 		current.BonusSeconds = 1 * 60;
 		current.QuestionSeconds = 2 * 60;
